@@ -69,7 +69,7 @@ function ExperienceCard({ experience, index }: { experience: (typeof experiences
                   <Briefcase className="w-4 h-4" />
                 </div>
                 <div className="space-y-1.5">
-                  <CardTitle className="text-lg font-semibold text-white">
+                  <CardTitle className="text-lg font-semibold text-cyan-400">
                     {experience.title}
                   </CardTitle>
                   <CardDescription className="flex items-center gap-2">
@@ -77,7 +77,7 @@ function ExperienceCard({ experience, index }: { experience: (typeof experiences
                       href={experience.companyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white text-base font-semibold hover:underline transition-colors flex items-center gap-1.5"
+                      className="text-cyan-300 text-base font-semibold hover:underline transition-colors flex items-center gap-1.5"
                     >
                       <span>{experience.company}</span>
                       {experience.companyUrl !== "#" && (
@@ -90,7 +90,7 @@ function ExperienceCard({ experience, index }: { experience: (typeof experiences
             </div>
             <Badge 
               variant="outline" 
-              className="text-xs font-medium whitespace-nowrap bg-white/10 text-white border-white/30 flex items-center gap-1.5"
+              className="text-xs font-medium whitespace-nowrap bg-[#2a2a2a] text-white/90 border-white/20 flex items-center gap-1.5"
             >
               <Calendar className="w-3 h-3" />
               {experience.period}

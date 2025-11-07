@@ -78,7 +78,7 @@ export default function Projects() {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-lg md:text-xl text-white group-hover:text-white/80 transition-colors">
+                    <CardTitle className="text-lg md:text-xl text-cyan-400 group-hover:text-cyan-300 transition-colors">
                       {project.title}
                     </CardTitle>
                     <div className="flex gap-2 flex-shrink-0">

@@ -56,7 +56,7 @@ export default function Skills() {
                 className="bg-[#3a3a3a] border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-white">
+                  <CardTitle className="text-lg flex items-center gap-2 text-cyan-400">
                     <span
                       className="w-2 h-2 rounded-full"
                       style={{
