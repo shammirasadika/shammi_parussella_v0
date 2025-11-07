@@ -1,4 +1,4 @@
-import { GraduationCap } from "lucide-react"
+import { GraduationCap, Award } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const education = [
@@ -9,6 +9,7 @@ const education = [
     location: "Australia",
     status: "In Progress",
     color: "primary",
+    type: "education",
   },
   {
     degree: "Bachelor of Science",
@@ -17,6 +18,7 @@ const education = [
     location: "Sri Lanka",
     status: "Completed - January 2020",
     color: "accent",
+    type: "education",
   },
   {
     degree: "Diploma",
@@ -25,6 +27,16 @@ const education = [
     location: "Sri Lanka",
     status: "Completed",
     color: "chart-3",
+    type: "education",
+  },
+  {
+    degree: "Microsoft Certified",
+    field: "Azure Developer Associate (AZ-204)",
+    institution: "Microsoft",
+    location: "Online",
+    status: "Certified",
+    color: "chart-4",
+    type: "certification",
   },
 ]
 
@@ -34,7 +46,7 @@ export default function Education() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400">
-            Education
+            Education & Certifications
           </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
@@ -45,7 +57,11 @@ export default function Education() {
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-white/10">
-                      <GraduationCap className="w-6 h-6 text-white" />
+                      {edu.type === "certification" ? (
+                        <Award className="w-6 h-6 text-white" />
+                      ) : (
+                        <GraduationCap className="w-6 h-6 text-white" />
+                      )}
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-lg md:text-xl text-white/90">{edu.degree}</CardTitle>

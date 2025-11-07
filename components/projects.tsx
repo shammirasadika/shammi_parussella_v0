@@ -7,34 +7,50 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "Enterprise Resource Planning System",
+    title: "Enterprise Resource Planning (ERP) System",
     description:
-      "Comprehensive ERP solution built with .NET Core for managing business operations, inventory, and customer relationships. Integrated with Azure services for cloud scalability.",
-    technologies: [".NET Core", "Azure DB", "React", "MS SQL", "Azure Functions"],
+      "Comprehensive ERP solution integrating finance, HR, inventory, and operations modules. Streamlines business processes with real-time data synchronization, automated workflows, and advanced reporting for enterprise-wide efficiency.",
+    technologies: ["C#", "ASP.NET Web Forms", "MS SQL", "ADO.NET", "Crystal Reports"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Real-time Analytics Dashboard",
+    title: "Payroll Management System",
     description:
-      "Interactive dashboard for visualizing business metrics and KPIs in real-time. Built with modern frontend frameworks and RESTful APIs for data aggregation.",
-    technologies: ["React", "ASP.NET Core", "SignalR", "Chart.js", "Azure"],
+      "Automated payroll processing system handling salary calculations, tax deductions, benefits management, and compliance reporting. Features employee self-service portal, direct deposit integration, and comprehensive audit trails.",
+    technologies: [".NET Core", "ASP.NET", "MS SQL", "Azure", "REST API"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Mobile Banking Application",
+    title: "Pest Control Management System",
     description:
-      "Cross-platform mobile banking app with secure authentication, transaction processing, and account management. Implemented with React Native and secure backend APIs.",
-    technologies: ["React Native", ".NET Core", "Azure", "REST API", "SQL Server"],
+      "Comprehensive pest control management solution for scheduling treatments, tracking customer service history, and managing field operations. Features automated scheduling, mobile access for technicians, and customer portal.",
+    technologies: ["ASP.NET MVC", ".NET Web API", "LINQ", "MS SQL", "Azure", "REST API"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Inventory Management System",
+    title: "InventroLink - Inventory Management System",
     description:
-      "Automated inventory tracking system with barcode scanning, stock alerts, and reporting. Designed for manufacturing and retail operations.",
-    technologies: [".NET Framework", "ASP.NET MVC", "MS SQL", "JavaScript"],
+      "Advanced modular inventory management solution featuring three integrated modules: User Module for staff operations, Admin Module for system management and reporting, and Azure Integration Module leveraging Azure Functions and Logic Apps for automated workflows and real-time data synchronization.",
+    technologies: [".NET Core", "Azure Functions", "Azure Logic Apps", "MS SQL", "React", "jQuery", "Azure DB", "REST API"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Cutting Edge Property Management System",
+    description:
+      "Modern property management platform for landlords and tenants featuring lease management, maintenance tracking, payment processing, and automated communications. Streamlines property operations and tenant relations.",
+    technologies: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Event Management System",
+    description:
+      "Complete event management solution for planning, coordinating, and executing events. Includes attendee registration, venue booking, resource allocation, ticketing, and real-time event tracking capabilities.",
+    technologies: ["ASP.NET Core", "React", "MS SQL", "Azure"],
     liveUrl: "#",
     githubUrl: "#",
   },

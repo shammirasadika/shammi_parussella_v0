@@ -7,17 +7,17 @@ const skillCategories = [
   {
     title: "Backend Development",
     color: "primary",
-    skills: [".NET Framework", ".NET Core", "C#", "ASP.NET MVC", "ASP.NET Core", "Entity Framework", "RESTful APIs"],
+    skills: [".NET Framework", ".NET Core", "C#", "ASP.NET MVC", "ASP.NET Core", "Entity Framework", "LINQ", "RESTful APIs", "Python", "Laravel", "PHP"],
   },
   {
     title: "Frontend Development",
     color: "accent",
-    skills: ["React", "Angular", "HTML5", "CSS3", "JavaScript", "TypeScript", "React Native"],
+    skills: ["React", "Next.js", "Angular", "HTML5", "CSS3", "JavaScript", "TypeScript", "jQuery", "React Native"],
   },
   {
     title: "Database & Cloud",
     color: "chart-3",
-    skills: ["MS SQL Server", "MySQL", "T-SQL", "Azure DB", "Azure Functions", "Azure Logic Apps", "Microsoft Azure"],
+    skills: ["MS SQL Server", "MySQL", "PostgreSQL", "MongoDB", "T-SQL", "Azure DB", "Neon DB", "Azure Functions", "Azure Logic Apps", "Microsoft Azure", "Google Cloud", "Vercel"],
   },
   {
     title: "Tools & Practices",
@@ -25,9 +25,19 @@ const skillCategories = [
     skills: ["Visual Studio", "Git", "Azure DevOps", "Unit Testing", "TDD", "NUnit", "xUnit"],
   },
   {
-    title: "Other Technologies",
+    title: "AI & ML Technologies",
     color: "chart-5",
-    skills: ["PHP", "Windows Service", "Azure Storage", "Azure Event Grid", "List & Label"],
+    skills: ["OpenAI", "Groq", "RAG (Retrieval-Augmented Generation)", "LLM Integration", "Natural Language Processing (NLP)"],
+  },
+  {
+    title: "Other Technologies",
+    color: "chart-2",
+    skills: ["Windows Service", "Azure Storage", "Azure Event Grid", "List & Label"],
+  },
+  {
+    title: "Soft Skills",
+    color: "chart-1",
+    skills: ["Problem Solving", "Team Collaboration", "Technical Leadership", "Communication", "Mentoring", "Agile Methodology", "Critical Thinking", "Time Management"],
   },
 ]
 
