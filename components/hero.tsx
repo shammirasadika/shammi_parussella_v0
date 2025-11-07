@@ -165,13 +165,25 @@ export default function Hero() {
           </div>
 
           <div className="flex items-center justify-center gap-4 pt-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0">
+              <a href="#get-in-touch">
+                Get In Touch
+                <span className="ml-2">↓</span>
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white border-0">
+              <a href="https://digital-twin-vert-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <span className="mr-2">💬</span>
+                Chat with My AI
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white border-0">
               <a href="https://github.com/shammirasadika" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white border-0">
               <a
                 href="https://www.linkedin.com/in/shammi-parussella-301603197"
                 target="_blank"
