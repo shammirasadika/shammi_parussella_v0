@@ -172,7 +172,7 @@ export default function Hero() {
               </a>
             </Button>
             <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white border-0">
-              <a href="#about">
+              <a href="https://digital-twin-vert-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <span className="mr-2">💬</span>
                 Chat with My AI
               </a>

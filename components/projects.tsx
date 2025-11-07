@@ -7,26 +7,52 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "Enterprise Resource Planning (ERP) System",
+    title: "MAS NOYON SIS/GIS SYSTEM",
     description:
-      "Comprehensive ERP solution integrating finance, HR, inventory, and operations modules. Streamlines business processes with real-time data synchronization, automated workflows, and advanced reporting for enterprise-wide efficiency.",
-    technologies: ["C#", "ASP.NET Web Forms", "MS SQL", "ADO.NET", "Crystal Reports"],
+      "Spatial Information System (SIS) and Geographic Information System (GIS) solution for MAS Noyon. Advanced mapping and spatial data management system for operational excellence and decision-making support.",
+    technologies: ["ASP.NET", "MS SQL", "GIS Technologies", ".NET Core"],
+    period: "Jul 2022 - Oct 2022",
+    company: "Acentura Inc",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Payroll Management System",
+    title: "Routing Flexibility System",
     description:
-      "Automated payroll processing system handling salary calculations, tax deductions, benefits management, and compliance reporting. Features employee self-service portal, direct deposit integration, and comprehensive audit trails.",
-    technologies: [".NET Core", "ASP.NET", "MS SQL", "Azure", "REST API"],
+      "Dynamic routing solution providing flexible path optimization and management capabilities. Enables efficient route planning and real-time adjustments for improved operational workflows.",
+    technologies: ["ASP.NET", "MS SQL", ".NET Core", "REST API"],
+    period: "Apr 2022 - Jul 2022",
+    company: "Acentura Inc",
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Warehouse Management System",
+    description:
+      "Comprehensive warehouse operations system for inventory tracking, order fulfillment, and logistics management. Features real-time stock monitoring, barcode integration, and automated workflows.",
+    technologies: [".NET Core", "MS SQL", "REST API", "JavaScript"],
+    period: "Jan 2020 - Jul 2020",
+    company: "",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     title: "Pest Control Management System",
     description:
-      "Comprehensive pest control management solution for scheduling treatments, tracking customer service history, and managing field operations. Features automated scheduling, mobile access for technicians, and customer portal.",
-    technologies: ["ASP.NET MVC", ".NET Web API", "LINQ", "MS SQL", "Azure", "REST API"],
+      "Complete pest control management solution for scheduling treatments, tracking customer service history, and managing field operations. Includes RDLC reporting, REST API integration, and Windows Service components.",
+    technologies: [".NET Core", "ASP.NET MVC", ".NET Web API", "LINQ", "MS SQL", "RDLC Reports", "Visual Studio 2019", "Windows Service"],
+    period: "",
+    company: "",
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Report Module System",
+    description:
+      "Advanced reporting module with Crystal Reports integration for generating comprehensive business reports. Features customizable templates, data visualization, and export capabilities.",
+    technologies: ["ASP.NET", "MS SQL 2015", "Bootstrap", "Crystal Reports"],
+    period: "",
+    company: "",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -35,6 +61,28 @@ const projects = [
     description:
       "Advanced modular inventory management solution featuring three integrated modules: User Module for staff operations, Admin Module for system management and reporting, and Azure Integration Module leveraging Azure Functions and Logic Apps for automated workflows and real-time data synchronization.",
     technologies: [".NET Core", "Azure Functions", "Azure Logic Apps", "MS SQL", "React", "jQuery", "Azure DB", "REST API"],
+    period: "",
+    company: "CONIFS Global",
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Enterprise Resource Planning (ERP) System",
+    description:
+      "Comprehensive ERP solution integrating finance, HR, inventory, and operations modules. Streamlines business processes with real-time data synchronization, automated workflows, and advanced reporting for enterprise-wide efficiency.",
+    technologies: ["C#", "ASP.NET Web Forms", "MS SQL", "ADO.NET", "Crystal Reports"],
+    period: "",
+    company: "",
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    title: "Payroll Management System",
+    description:
+      "Automated payroll processing system handling salary calculations, tax deductions, benefits management, and compliance reporting. Features employee self-service portal, direct deposit integration, and comprehensive audit trails.",
+    technologies: [".NET Core", "ASP.NET", "MS SQL", "Azure", "REST API"],
+    period: "",
+    company: "",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -43,6 +91,8 @@ const projects = [
     description:
       "Modern property management platform for landlords and tenants featuring lease management, maintenance tracking, payment processing, and automated communications. Streamlines property operations and tenant relations.",
     technologies: ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+    period: "",
+    company: "",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -51,6 +101,8 @@ const projects = [
     description:
       "Complete event management solution for planning, coordinating, and executing events. Includes attendee registration, venue booking, resource allocation, ticketing, and real-time event tracking capabilities.",
     technologies: ["ASP.NET Core", "React", "MS SQL", "Azure"],
+    period: "",
+    company: "",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -78,9 +130,18 @@ export default function Projects() {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-lg md:text-xl text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                      {project.title}
-                    </CardTitle>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg md:text-xl text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      {(project.period || project.company) && (
+                        <div className="flex flex-wrap gap-2 mt-2 text-xs text-white/60">
+                          {project.period && <span>{project.period}</span>}
+                          {project.period && project.company && <span>•</span>}
+                          {project.company && <span>{project.company}</span>}
+                        </div>
+                      )}
+                    </div>
                     <div className="flex gap-2 flex-shrink-0">
                       {project.liveUrl !== "#" && (
                         <Button
