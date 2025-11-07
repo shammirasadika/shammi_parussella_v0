@@ -7,11 +7,11 @@ export default function Contact() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Get In Touch</span>
+          <h2 className="text-4xl font-bold mb-12 text-center text-white">
+            Get In Touch
           </h2>
 
-          <Card className="bg-card/50 backdrop-blur border-border/50">
+          <Card className="bg-transparent backdrop-blur border-border/50">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">

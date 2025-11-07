@@ -36,21 +36,19 @@ export default function Skills() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Skills & Technologies
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400">
+            Skills & Technologies
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
               <Card
                 key={index}
-                className="bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-all duration-300"
+                className="bg-[#3a3a3a] border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2">
+                  <CardTitle className="text-lg flex items-center gap-2 text-white">
                     <span
-                      className={`w-2 h-2 rounded-full bg-${category.color}`}
+                      className="w-2 h-2 rounded-full"
                       style={{
                         backgroundColor: `var(--color-${category.color})`,
                       }}
@@ -64,7 +62,7 @@ export default function Skills() {
                       <Badge
                         key={skill}
                         variant="secondary"
-                        className="bg-muted/50 text-foreground/80 hover:bg-primary/20 hover:text-primary transition-colors"
+                        className="bg-[#4a5568] text-white/90 border-white/20 hover:bg-[#5a6578] transition-colors text-xs"
                       >
                         {skill}
                       </Badge>

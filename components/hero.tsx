@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -117,11 +118,25 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Profile Image */}
+          <div className="flex justify-center animate-fade-in">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-chart-3 rounded-full blur-2xl opacity-30 animate-pulse" />
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl bg-white">
+                <Image
+                  src="/profile.jpg"
+                  alt="Shammi Parussella"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-4 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-balance">
-              <span className="bg-gradient-to-r from-primary via-accent to-chart-3 bg-clip-text text-transparent">
-                Shammi Parussella
-              </span>
+              <span className="text-yellow-400">Shammi Parussella</span>
             </h1>
             <p className="text-2xl md:text-3xl text-muted-foreground font-light">
               Full Stack Developer & .NET Consultant
@@ -130,7 +145,7 @@ export default function Hero() {
 
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
             A self-motivated developer with <span className="text-primary font-semibold">4+ years</span> of experience
-            in <span className="text-accent font-semibold">.NET consulting</span>, training, and solution development.
+            in <span className="text-white font-semibold">.NET consulting</span>, training, and solution development.
             Committed to delivering excellence in every project.
           </p>
 

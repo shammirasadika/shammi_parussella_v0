@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { ExternalLink } from "lucide-react"
+import { Briefcase, Calendar, ExternalLink } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
@@ -54,66 +53,61 @@ const experiences = [
 ]
 
 function ExperienceCard({ experience, index }: { experience: (typeof experiences)[0]; index: number }) {
-  const [isVisible, setIsVisible] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div
-      ref={cardRef}
-      className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
-      <Card className="bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-        <CardHeader>
-          <div className="flex items-start justify-between gap-4">
-            <div className="space-y-2">
-              <CardTitle className="text-xl text-foreground">{experience.title}</CardTitle>
-              <CardDescription className="flex items-center gap-2 text-base">
-                <a
-                  href={experience.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 font-semibold"
-                >
-                  {experience.company}
-                  {experience.companyUrl !== "#" && <ExternalLink className="w-3 h-3" />}
-                </a>
-              </CardDescription>
+    <div>
+      <Card className="group relative bg-[#3a3a3a] border-border/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300">
+        <CardHeader className="pb-4">
+          <div className="flex items-start justify-between gap-4 flex-wrap">
+            <div className="space-y-2 flex-1">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 p-2 rounded-lg bg-white/10 text-white">
+                  <Briefcase className="w-4 h-4" />
+                </div>
+                <div className="space-y-1.5">
+                  <CardTitle className="text-lg font-semibold text-white">
+                    {experience.title}
+                  </CardTitle>
+                  <CardDescription className="flex items-center gap-2">
+                    <a
+                      href={experience.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-base font-semibold hover:underline transition-colors flex items-center gap-1.5"
+                    >
+                      <span>{experience.company}</span>
+                      {experience.companyUrl !== "#" && (
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      )}
+                    </a>
+                  </CardDescription>
+                </div>
+              </div>
             </div>
-            <Badge variant="outline" className="text-xs whitespace-nowrap bg-muted/50">
+            <Badge 
+              variant="outline" 
+              className="text-xs font-medium whitespace-nowrap bg-white/10 text-white border-white/30 flex items-center gap-1.5"
+            >
+              <Calendar className="w-3 h-3" />
               {experience.period}
             </Badge>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <ul className="space-y-2 text-foreground/70">
+          <ul className="space-y-2.5 text-white/80">
             {experience.description.map((item, i) => (
-              <li key={i} className="flex gap-2 text-sm leading-relaxed">
-                <span className="text-accent mt-1.5">•</span>
+              <li key={i} className="flex gap-2.5 text-sm leading-relaxed">
+                <span className="text-white font-semibold mt-0.5">•</span>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
           <div className="flex flex-wrap gap-2 pt-2">
             {experience.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+              <Badge 
+                key={tech} 
+                variant="secondary" 
+                className="bg-[#4a5568] text-white/90 border-white/20 hover:bg-[#5a6578] transition-colors text-xs font-medium"
+              >
                 {tech}
               </Badge>
             ))}
@@ -126,12 +120,18 @@ function ExperienceCard({ experience, index }: { experience: (typeof experiences
 
 export default function Experience() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Experience</span>
-          </h2>
+          <div className="text-center mb-12 space-y-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-400 hover:scale-105 transition-transform duration-300">
+              Experience
+            </h2>
+            <p className="text-white/70 text-base max-w-2xl mx-auto">
+              4+ years of professional software development experience
+            </p>
+          </div>
+          
           <div className="space-y-6">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} experience={experience} index={index} />

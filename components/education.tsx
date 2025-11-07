@@ -33,40 +33,24 @@ export default function Education() {
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Education</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400">
+            Education
           </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
               <Card
                 key={index}
-                className="bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-all duration-300"
+                className="bg-[#3a3a3a] border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
               >
                 <CardHeader>
                   <div className="flex items-start gap-4">
-                    <div
-                      className="p-3 rounded-lg"
-                      style={{
-                        backgroundColor: `var(--color-${edu.color})`,
-                        opacity: 0.1,
-                      }}
-                    >
-                      <GraduationCap
-                        className="w-6 h-6"
-                        style={{
-                          color: `var(--color-${edu.color})`,
-                        }}
-                      />
+                    <div className="p-3 rounded-lg bg-white/10">
+                      <GraduationCap className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl text-foreground">{edu.degree}</CardTitle>
+                      <CardTitle className="text-lg md:text-xl text-white/90">{edu.degree}</CardTitle>
                       <CardDescription className="text-base mt-1">
-                        <span
-                          className="font-semibold"
-                          style={{
-                            color: `var(--color-${edu.color})`,
-                          }}
-                        >
+                        <span className="font-semibold text-white">
                           {edu.field}
                         </span>
                       </CardDescription>
@@ -74,10 +58,10 @@ export default function Education() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-1 text-sm text-foreground/70">
-                    <p className="font-medium text-foreground">{edu.institution}</p>
+                  <div className="space-y-1 text-sm text-white/80">
+                    <p className="font-medium text-white/90">{edu.institution}</p>
                     <p>{edu.location}</p>
-                    <p className="text-muted-foreground italic">{edu.status}</p>
+                    <p className="text-white/70">{edu.status}</p>
                   </div>
                 </CardContent>
               </Card>
