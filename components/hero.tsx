@@ -177,12 +177,6 @@ export default function Hero() {
                 Chat with My AI
               </a>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0">
-              <a href="/deliverables">
-                <span className="mr-2">📋</span>
-                Weekly Deliverables
-              </a>
-            </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white border-0">
               <a href="https://github.com/shammirasadika" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
