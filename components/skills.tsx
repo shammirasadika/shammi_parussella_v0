@@ -43,7 +43,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400">

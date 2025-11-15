@@ -109,7 +109,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
@@ -164,7 +164,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0">
               <a href="#get-in-touch">
                 Get In Touch
@@ -175,6 +175,12 @@ export default function Hero() {
               <a href="https://digital-twin-vert-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <span className="mr-2">💬</span>
                 Chat with My AI
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0">
+              <a href="/deliverables">
+                <span className="mr-2">📋</span>
+                Weekly Deliverables
               </a>
             </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white border-0">

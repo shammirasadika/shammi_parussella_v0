@@ -156,7 +156,7 @@ export default function Projects() {
   const professionalProjects = projects.filter(p => p.category === "Professional")
 
   return (
-    <section className="py-20 bg-background">
+    <section id="projects" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 space-y-3">
