@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function PresentationPage() {
   const presentationDetails = {
-    title: "AI Agent Developer: 10-Week Journey Showcase",
+    title: "AI Digital Twin: 10-Week Journey Showcase",
     date: "Week 10 - Final Showcase",
     duration: "20 minutes",
     audience: "Technical Recruiters, Hiring Managers, Industry Professionals",
@@ -17,63 +17,73 @@ export default function PresentationPage() {
   const agenda = [
     {
       time: "0:00 - 2:00",
-      section: "Introduction & Overview",
-      topics: ["Personal background", "Workshop objectives", "10-week program structure"],
-    },
-    {
-      time: "2:00 - 5:00",
-      section: "Cycle 1: Development Foundations",
+      section: "Introduction",
       topics: [
-        "Week 1: Development environment & MCP setup",
-        "Week 2: Next.js CV website with v0.dev",
-        "Week 3: Full-stack Person App with Prisma",
-        "Week 4: Custom MCP server development",
+        "What is your AI Digital Twin?",
+        "What inspired you to create it?",
+        "What problem or opportunity does it address?",
       ],
     },
     {
-      time: "5:00 - 10:00",
-      section: "Cycle 2: Advanced AI Integration",
+      time: "2:00 - 6:00",
+      section: "Technology Stack",
       topics: [
-        "Week 5: Authentication with Auth.js OAuth",
-        "Week 6: Digital Twin RAG foundation",
-        "Week 7: Advanced RAG features & memory",
-        "Week 8: Production deployment & monitoring",
+        "Core technologies: Next.js, React, TypeScript, Prisma",
+        "AI integration: RAG system, Vector DB, LLM (Groq/Ollama)",
+        "Data architecture and system structure",
+        "MCP protocol implementation",
       ],
     },
     {
-      time: "10:00 - 15:00",
-      section: "Cycle 3: Portfolio Excellence",
+      time: "6:00 - 10:00",
+      section: "Testing & Peer Feedback",
       topics: [
-        "Week 9: Integrated portfolio with MCP",
-        "5 required pages implementation",
-        "Chat interface with RAG integration",
-        "Professional branding system",
+        "Testing methodology and validation approach",
+        "Peer and mentor feedback collection",
+        "Key insights from user interactions",
+        "Technical refinements based on feedback",
       ],
     },
     {
-      time: "15:00 - 18:00",
-      section: "Live Demonstrations",
+      time: "10:00 - 13:00",
+      section: "Improvements Made",
       topics: [
-        "MCP server tool calling demo",
-        "Digital Twin AI interaction",
-        "Person App CRUD operations",
-        "Portfolio navigation showcase",
+        "Changes implemented based on feedback",
+        "Enhanced user experience features",
+        "Performance optimizations",
+        "UI/UX refinements",
       ],
     },
     {
-      time: "18:00 - 20:00",
-      section: "Career Development & Q&A",
-      topics: ["Professional network & connections", "Continued learning plan", "Open-source contributions", "Questions & discussion"],
+      time: "13:00 - 16:00",
+      section: "Challenges Faced",
+      topics: [
+        "Technical challenges (RAG, vector DB, deployment)",
+        "Non-technical challenges (time management, learning curve)",
+        "Problem-solving through research and teamwork",
+        "Lessons learned throughout development",
+      ],
+    },
+    {
+      time: "16:00 - 20:00",
+      section: "Conclusion & Future",
+      topics: [
+        "Key learnings about AI and digital twins",
+        "Teamwork and collaboration insights",
+        "Future improvements and enhancements",
+        "How the project enhances employability",
+        "Q&A Session",
+      ],
     },
   ]
 
   const keyTakeaways = [
-    "Built 3 production-ready applications from scratch",
+    "Built AI-powered Digital Twin with RAG system from scratch",
+    "Implemented comprehensive portfolio with 10+ pages",
     "Developed custom MCP server for AI agent integration",
-    "Implemented RAG-powered Digital Twin with 24/7 availability",
-    "Mastered Next.js 15, React 19, TypeScript, and modern tooling",
-    "Deployed applications to Vercel with CI/CD pipelines",
-    "Integrated authentication, databases, and AI systems",
+    "Mastered Next.js 15, React 19, TypeScript, and modern AI tooling",
+    "Deployed production applications with 24/7 availability on Vercel",
+    "Integrated vector databases, LLMs, and advanced AI features",
   ]
 
   return (
