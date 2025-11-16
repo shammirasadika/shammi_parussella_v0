@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Circle, Github, ExternalLink, Calendar, Target, BookOpen } from "lucide-react"
 import Link from "next/link"
 
-export default function DeliverablesPage() {
-  const deliverables = [
+export default function JourneyPage() {
+  const journey = [
     {
       week: 1,
       title: "Development Environment Setup",
@@ -172,8 +172,8 @@ export default function DeliverablesPage() {
     }
   }
 
-  const completedCount = deliverables.filter((d) => d.status === "completed").length
-  const totalCount = deliverables.length
+  const completedCount = journey.filter((d) => d.status === "completed").length
+  const totalCount = journey.length
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-background/80">
@@ -187,7 +187,7 @@ export default function DeliverablesPage() {
               </Link>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Weekly Deliverables
+                  Weekly Journey
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground">
@@ -260,35 +260,35 @@ export default function DeliverablesPage() {
           </Card>
         </div>
 
-        {/* Deliverables List */}
+        {/* Journey List */}
         <div className="space-y-6">
-          {deliverables.map((deliverable) => (
+          {journey.map((item) => (
             <Card
-              key={deliverable.week}
+              key={item.week}
               className={`border-2 transition-all hover:shadow-lg ${
-                deliverable.status === "in-progress" ? "border-cyan-500/50 bg-cyan-500/5" : "border-border/40"
+                item.status === "in-progress" ? "border-cyan-500/50 bg-cyan-500/5" : "border-border/40"
               }`}
             >
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      {getStatusIcon(deliverable.status)}
+                      {getStatusIcon(item.status)}
                       <Badge variant="outline" className="text-xs">
-                        Week {deliverable.week}
+                        Week {item.week}
                       </Badge>
-                      <Badge variant="outline" className={`text-xs ${getStatusColor(deliverable.status)}`}>
-                        {deliverable.status.replace("-", " ").toUpperCase()}
+                      <Badge variant="outline" className={`text-xs ${getStatusColor(item.status)}`}>
+                        {item.status.replace("-", " ").toUpperCase()}
                       </Badge>
                     </div>
-                    <CardTitle className="text-2xl mb-2">{deliverable.title}</CardTitle>
-                    <CardDescription className="text-base">{deliverable.description}</CardDescription>
+                    <CardTitle className="text-2xl mb-2">{item.title}</CardTitle>
+                    <CardDescription className="text-base">{item.description}</CardDescription>
                   </div>
                   <div className="flex items-center gap-2 ml-4">
-                    {deliverable.repository && (
+                    {item.repository && (
                       <Button asChild variant="outline" size="sm">
                         <a
-                          href={`https://github.com/shammirasadika/${deliverable.repository}`}
+                          href={`https://github.com/shammirasadika/${item.repository}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -296,9 +296,9 @@ export default function DeliverablesPage() {
                         </a>
                       </Button>
                     )}
-                    {deliverable.liveUrl && (
+                    {item.liveUrl && (
                       <Button asChild variant="outline" size="sm">
-                        <a href={deliverable.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </Button>
@@ -311,13 +311,13 @@ export default function DeliverablesPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    <span>Due: {deliverable.dueDate}</span>
+                    <span>Due: {item.dueDate}</span>
                   </div>
 
                   <div>
                     <h4 className="text-sm font-semibold mb-2 text-foreground">Key Achievements:</h4>
                     <ul className="space-y-1.5">
-                      {deliverable.keyAchievements.map((achievement, idx) => (
+                      {item.keyAchievements.map((achievement, idx) => (
                         <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
                           <span className="text-cyan-400 mt-1">•</span>
                           <span>{achievement}</span>
@@ -326,11 +326,11 @@ export default function DeliverablesPage() {
                     </ul>
                   </div>
 
-                  {deliverable.requirements && (
+                  {item.requirements && (
                     <div>
                       <h4 className="text-sm font-semibold mb-2 text-cyan-400">Week 9 Requirements:</h4>
                       <ul className="space-y-1.5">
-                        {deliverable.requirements.map((req, idx) => (
+                        {item.requirements.map((req, idx) => (
                           <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
                             <span className="text-cyan-400 mt-1">→</span>
                             <span>{req}</span>

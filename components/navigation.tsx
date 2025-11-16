@@ -16,12 +16,20 @@ const navItems = [
 ]
 
 const portfolioPages = [
-  { name: "📋 Deliverables", href: "/deliverables" },
+  { name: "🚀 Journey", href: "/journey" },
   { name: "🚀 Project Showcase", href: "/projects" },
   { name: "📦 Repositories", href: "/repositories" },
   { name: "🔌 MCP Integration", href: "/mcp" },
   { name: "🎮 Live Demos", href: "/demos" },
   { name: "🎨 Design System", href: "/professional" },
+]
+
+const week10Pages = [
+  { name: "🎤 Presentation", href: "/presentation" },
+  { name: "🎯 Career Plan", href: "/career-plan" },
+  { name: "🤝 Network", href: "/network" },
+  { name: "💻 Open Source", href: "/open-source" },
+  { name: "📚 Learning Plan", href: "/continued-learning" },
 ]
 
 export default function Navigation() {
@@ -146,7 +154,23 @@ export default function Navigation() {
                   }`}
                 >
                   <div className="py-2">
+                    <div className="px-4 py-1 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
+                      Portfolio
+                    </div>
                     {portfolioPages.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                    <div className="my-1 border-t border-border/40" />
+                    <div className="px-4 py-1 text-xs font-semibold text-purple-400 uppercase tracking-wider">
+                      Professional
+                    </div>
+                    {week10Pages.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
@@ -199,9 +223,26 @@ export default function Navigation() {
             {/* Portfolio Section */}
             <div className="pt-2 pb-1">
               <div className="px-4 py-2 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
-                Portfolio Pages
+                Portfolio
               </div>
               {portfolioPages.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-200"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            
+            {/* Week 10 Section */}
+            <div className="pt-1 pb-1">
+              <div className="px-4 py-2 text-xs font-semibold text-purple-400 uppercase tracking-wider">
+                Professional
+              </div>
+              {week10Pages.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
