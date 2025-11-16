@@ -103,7 +103,7 @@ export default function Navigation() {
               }}
               className="text-xl md:text-2xl font-bold hover:text-cyan-400 transition-colors"
             >
-              <span className="text-yellow-400">SP</span>
+              <span className="text-yellow-400">Shammi Parussella</span>
             </a>
 
             {/* Desktop Menu */}
@@ -160,19 +160,6 @@ export default function Navigation() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
-              <Button
-                asChild
-                size="sm"
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0"
-              >
-                <a href="https://digital-twin-vert-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Chat with AI
-                </a>
-              </Button>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -226,17 +213,6 @@ export default function Navigation() {
               ))}
             </div>
             
-            <div className="pt-2">
-              <Button
-                asChild
-                size="sm"
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0"
-              >
-                <a href="https://digital-twin-vert-nu.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Chat with AI
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </nav>

@@ -5,7 +5,9 @@ import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Education from "@/components/education"
+import ChatSection from "@/components/chat-section"
 import Contact from "@/components/contact"
+import ChatWidget from "@/components/chat-widget"
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
       <Projects />
       <Skills />
       <Education />
+      <ChatSection />
       <Contact />
+      <ChatWidget />
     </main>
   )
 }
