@@ -135,7 +135,7 @@ export default function PresentationPage() {
               <Video className="w-6 h-6 text-cyan-400" />
               Presentation Recording
             </CardTitle>
-            <CardDescription>20-minute technical showcase of the 10-week AI Agent Developer journey</CardDescription>
+            <CardDescription>20-minute technical showcase of the AI Digital Twin project</CardDescription>
           </CardHeader>
           <CardContent>
             {presentationDetails.videoUrl ? (
@@ -169,7 +169,7 @@ export default function PresentationPage() {
               <FileText className="w-6 h-6 text-cyan-400" />
               Presentation Agenda
             </CardTitle>
-            <CardDescription>Structured 20-minute overview of the complete workshop journey</CardDescription>
+            <CardDescription>Structured 20-minute presentation following industry guidelines</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
@@ -200,8 +200,8 @@ export default function PresentationPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <Card className="border-cyan-500/20">
             <CardHeader>
-              <CardTitle className="text-xl">Key Takeaways</CardTitle>
-              <CardDescription>Major accomplishments from the 10-week program</CardDescription>
+              <CardTitle className="text-xl">Key Accomplishments</CardTitle>
+              <CardDescription>Major achievements from the complete project</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
