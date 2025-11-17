@@ -240,7 +240,7 @@ export default function InteractiveDemosPage() {
                   </CardDescription>
                 </div>
                 <Button asChild variant="outline">
-                  <Link href="/mcp">
+                  <Link href="/mcp-demo">
                     <Code2 className="w-4 h-4 mr-2" />
                     View All MCP Tools
                   </Link>
@@ -311,7 +311,7 @@ export default function InteractiveDemosPage() {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/mcp">
+                <Link href="/mcp-demo">
                   MCP Integration
                 </Link>
               </Button>

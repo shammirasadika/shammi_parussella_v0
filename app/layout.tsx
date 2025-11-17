@@ -19,6 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if (window.location.hash) {
+              window.location.replace(window.location.pathname);
+            }
+          `
+        }} />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Analytics />

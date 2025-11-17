@@ -29,7 +29,7 @@ export default function PresentationPage() {
       section: "Technology Stack",
       topics: [
         "Core technologies: Next.js, React, TypeScript, Prisma",
-        "AI integration: RAG system, Vector DB, LLM (Groq/Ollama)",
+        "AI integration: RAG system, Upstash Vector DB, Groq LLM",
         "Data architecture and system structure",
         "MCP protocol implementation",
       ],
@@ -274,7 +274,7 @@ export default function PresentationPage() {
               </Button>
 
               <Button asChild variant="outline" className="h-auto py-4 justify-start">
-                <Link href="/mcp">
+                <Link href="/mcp-demo">
                   <ExternalLink className="w-5 h-5 mr-3 text-purple-400" />
                   <div className="text-left">
                     <div className="font-semibold">MCP Integration</div>

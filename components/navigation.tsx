@@ -19,7 +19,7 @@ const portfolioPages = [
   { name: "🚀 Journey", href: "/journey" },
   { name: "🚀 Project Showcase", href: "/projects" },
   { name: "📦 Repositories", href: "/repositories" },
-  { name: "🔌 MCP Integration", href: "/mcp" },
+  { name: "🔌 MCP Integration", href: "/mcp-demo" },
   { name: "🎮 Live Demos", href: "/demos" },
   { name: "🎨 Design System", href: "/professional" },
 ]

@@ -484,7 +484,8 @@ export default function ProfessionalPage() {
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">MCP Protocol</Badge>
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">RAG</Badge>
-                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Ollama</Badge>
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Groq LLM</Badge>
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Upstash Vector</Badge>
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Prisma</Badge>
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">Auth.js</Badge>
                 </div>

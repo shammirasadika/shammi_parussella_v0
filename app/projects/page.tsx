@@ -17,7 +17,7 @@ const caseStudies = [
     category: "AI & ML",
     color: "from-purple-500 to-pink-500",
     thumbnail: "🤖",
-    tags: ["Next.js", "RAG", "Vector DB", "Ollama", "TypeScript"],
+    tags: ["Next.js", "RAG", "Upstash Vector", "Groq LLM", "TypeScript"],
     overview: "Enterprise-grade Digital Twin system using RAG architecture with 24/7 availability, professional STAR-formatted profile, and optimized for recruiter interactions.",
     problem: "Need for an intelligent AI assistant that can provide accurate, context-aware responses about professional experience while maintaining conversation history and providing proper citations.",
     solution: "Built a sophisticated RAG system with vector embeddings, conversation memory, and advanced retrieval strategies. Implemented 12-step methodology with STAR profile optimization.",
@@ -36,7 +36,7 @@ const caseStudies = [
       { title: "Citations", description: "Source attribution with document references" },
       { title: "Analytics", description: "Query patterns and response quality metrics" },
     ],
-    technologies: ["Next.js 15", "TypeScript", "Vector DB", "Ollama", "RAG", "Embeddings", "ChromaDB", "Vercel"],
+    technologies: ["Next.js 15", "TypeScript", "Upstash Vector", "Groq LLM", "RAG", "Embeddings", "Vercel"],
     features: [
       "Vector database with semantic search",
       "Multi-turn conversation with context memory",
@@ -67,7 +67,7 @@ const caseStudies = [
       "Handles concurrent users efficiently",
       "Professional presentation for recruiters",
     ],
-    github: "https://github.com/shammirasadika/digital-twin-shammi",
+    github: "https://github.com/shammirasadika/Digital-Twin",
     demo: "https://digital-twin-vert-nu.vercel.app/",
     lessonsLearned: [
       "Importance of chunking strategy for retrieval quality",
@@ -268,7 +268,7 @@ const caseStudies = [
       "High performance metrics",
     ],
     github: "https://github.com/shammirasadika/shammi_parussella_v0",
-    demo: "https://shammi-parussella-v0.vercel.app",
+    demo: "https://v0-animated-hero-section-teal.vercel.app/",
     lessonsLearned: [
       "Importance of consistent design system",
       "Value of performance optimization",

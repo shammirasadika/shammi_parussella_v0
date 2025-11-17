@@ -1,3 +1,5 @@
+
+import { useEffect } from "react"
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
 import About from "@/components/about"
@@ -10,6 +12,14 @@ import Contact from "@/components/contact"
 import ChatWidget from "@/components/chat-widget"
 
 export default function Home() {
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.location.hash) {
+        window.location.hash = "";
+      }
+      window.scrollTo(0, 0);
+    }, 0);
+  }, [])
   return (
     <main className="min-h-screen">
       <Navigation />

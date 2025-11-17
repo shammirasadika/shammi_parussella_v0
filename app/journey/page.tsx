@@ -25,7 +25,7 @@ export default function JourneyPage() {
       status: "completed",
       description: "AI-generated portfolio website using Next.js 15, React 19, and v0.dev",
       repository: "shammi_parussella_v0",
-      liveUrl: "https://shammi-parussella-v0.vercel.app",
+      liveUrl: "https://v0-animated-hero-section-teal.vercel.app/",
       dueDate: "End of Week 2",
       keyAchievements: [
         "Deployed responsive CV website on Vercel",
@@ -375,9 +375,9 @@ export default function JourneyPage() {
                 <h4 className="font-semibold mb-2 text-purple-400">Database & AI</h4>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary">Neon Postgres</Badge>
-                  <Badge variant="secondary">Vector DB</Badge>
+                  <Badge variant="secondary">Upstash Vector</Badge>
                   <Badge variant="secondary">RAG Systems</Badge>
-                  <Badge variant="secondary">Ollama</Badge>
+                  <Badge variant="secondary">Groq LLM</Badge>
                 </div>
               </div>
               <div>
