@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       response: result.answer,
-      metadata: result.metadata,
+      metadata: 'metadata' in result ? result.metadata : {},
     });
   } catch (error) {
     console.error('Error in chat API:', error);
