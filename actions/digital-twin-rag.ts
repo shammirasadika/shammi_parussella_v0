@@ -3,7 +3,7 @@
 import { Index } from "@upstash/vector";
 import Groq from "groq-sdk";
 import { enhanceQuery, formatForInterview, formatForInterviewType } from "@/lib/llm-enhanced-rag";
-import { RAG_CONFIGS } from "@/lib/rag-configs";
+import { RAG_CONFIGS } from "@/lib/llm-enhanced-rag";
 
 // Initialize Upstash Vector client
 const index = new Index({
