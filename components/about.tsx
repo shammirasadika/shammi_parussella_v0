@@ -25,10 +25,10 @@ export default function About() {
             </p>
             <p className="text-foreground/90 leading-relaxed text-base md:text-lg">
               My professional journey spans over{" "}
-              <span className="text-white font-semibold">4 years</span> working as a{" "}
-              <span className="text-white font-semibold">.NET Consultant</span> at Sysco LABS, 
-              where I've had the privilege of architecting enterprise-level applications, mentoring development teams, 
-              and delivering innovative solutions across diverse industries. I specialize in building robust APIs, 
+              <span className="text-white font-semibold">4 years</span> working at four different companies as a{" "}
+              <span className="text-white font-semibold">.NET Consultant</span>,
+              where I've had the privilege of architecting enterprise-level applications, mentoring development teams,
+              and delivering innovative solutions across diverse industries. I specialize in building robust APIs,
               microservices architectures, and cloud-native applications using{" "}
               <span className="text-white font-semibold">Azure</span> and modern DevOps practices.
             </p>
