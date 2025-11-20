@@ -321,6 +321,7 @@ function HeroMedia() {
             pointerEvents: showVideo && !isPiP ? 'auto' : 'none',
             transition: 'opacity 0.3s'
           }}
+          controls
         autoPlay={showVideo && !isPiP}
         playsInline
         onEnded={handleVideoEnd}
