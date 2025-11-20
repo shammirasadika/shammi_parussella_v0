@@ -10,7 +10,7 @@ const projects = [
     title: "Career Assistant AI",
     description:
       "AI-powered career guidance system using RAG (Retrieval-Augmented Generation) and LLM technologies. Provides personalized career recommendations, job matching, and professional development guidance through intelligent conversation.",
-    technologies: ["Python", "RAG", "LLM", "OpenAI", "Next.js", "NLP"],
+    technologies: ["Python", "RAG", "LLM", "OpenAI/Groq", "Gradio", "NLP"],
     period: "",
     company: "University of Tasmania",
     category: "University",

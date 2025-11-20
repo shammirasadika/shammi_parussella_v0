@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -119,20 +119,15 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Profile Image */}
-          <div className="flex justify-center animate-fade-in">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-chart-3 rounded-full blur-2xl opacity-30 animate-pulse" />
-              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl bg-white">
-                <Image
-                  src="/profile.jpg"
-                  alt="Shammi Parussella"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+            <div className="flex justify-center animate-fade-in">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-chart-3 rounded-full blur-2xl opacity-30 animate-pulse" />
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl bg-white flex items-center justify-center">
+                  {/* Interactive image/video frame */}
+                  <HeroMedia />
+                </div>
               </div>
             </div>
-          </div>
 
           <div className="space-y-4 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-balance">
@@ -204,4 +199,137 @@ export default function Hero() {
       </div>
     </section>
   )
+}
+
+  // --- HeroMedia: handles image/video/play button logic ---
+  import { PlayCircle } from "lucide-react"
+
+
+function HeroMedia() {
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoTime, setVideoTime] = useState(0);
+  const [isPiP, setIsPiP] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Play video when button clicked
+  const handlePlay = () => {
+    if (!videoRef.current) return;
+    // Only play if not already playing in frame
+    if (!videoRef.current.paused && showVideo && !isPiP) return;
+    setIsPiP(false);
+    setShowVideo(true);
+    videoRef.current.currentTime = videoTime;
+    videoRef.current.play();
+  };
+
+  // When video ends, revert to image
+  const handleVideoEnd = () => {
+    setShowVideo(false);
+    setVideoTime(0);
+  };
+
+  // Listen for PiP, pause, ended, tab hidden, and PiP return events
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // When PiP starts, show image in frame
+    const handleEnterPiP = () => {
+      setIsPiP(true);
+      setShowVideo(false);
+      setVideoTime(video.currentTime);
+    };
+    // When PiP ends (Back to tab), resume video in frame automatically if it was playing
+    const handleLeavePiP = () => {
+      if (video.paused || video.ended) {
+        setIsPiP(false);
+        setShowVideo(false);
+        setVideoTime(video.currentTime);
+        return;
+      }
+      setIsPiP(false);
+      setShowVideo(true);
+      // Wait for video to be visible, then play
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = videoTime;
+          videoRef.current.play();
+        }
+      }, 100);
+    };
+    // Pause/ended/tab hidden: revert to image and pause video
+    const handlePause = () => {
+      setShowVideo(false);
+      setVideoTime(video.currentTime);
+      if (videoRef.current && !videoRef.current.paused) {
+        videoRef.current.pause();
+      }
+    };
+    const handleEnded = () => {
+      setShowVideo(false);
+      setVideoTime(0);
+      if (videoRef.current && !videoRef.current.paused) {
+        videoRef.current.pause();
+      }
+    };
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        setShowVideo(false);
+        setVideoTime(video.currentTime);
+        if (videoRef.current && !videoRef.current.paused) {
+          videoRef.current.pause();
+        }
+      }
+    };
+
+    video.addEventListener('enterpictureinpicture', handleEnterPiP);
+    video.addEventListener('leavepictureinpicture', handleLeavePiP);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Remove duplicate leavepictureinpicture handler to avoid interfering with auto-resume
+
+    return () => {
+      video.removeEventListener('enterpictureinpicture', handleEnterPiP);
+      video.removeEventListener('leavepictureinpicture', handleLeavePiP);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', handleEnded);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [videoTime]);
+
+  return (
+    <div className="w-full h-full relative flex items-center justify-center">
+      {/* Always render the video element, toggle visibility with CSS */}
+      <Image
+        src="/profile.jpg"
+        alt="Shammi Parussella"
+        fill
+        className="object-cover"
+        priority
+        style={{ zIndex: 0, opacity: (!showVideo || isPiP) ? 1 : 0, transition: 'opacity 0.3s' }}
+      />
+      <video
+        ref={videoRef}
+        src="https://storage.googleapis.com/into_fullstack/Shammi%20Parussella_%20Full-Stack%20Innovator.mp4"
+        className="absolute inset-0 w-full h-full object-cover rounded-full"
+        style={{ zIndex: 1, background: 'transparent', display: showVideo && !isPiP ? 'block' : 'none', transition: 'display 0.3s' }}
+        autoPlay={showVideo && !isPiP}
+        playsInline
+        onEnded={handleVideoEnd}
+      />
+      {/* Play button overlay only when not playing video in frame or in PiP */}
+      {(!showVideo || isPiP) && (
+        <button
+          aria-label="Play video"
+          onClick={handlePlay}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/60 rounded-full p-4 hover:bg-black/80 transition"
+          style={{ zIndex: 2 }}
+        >
+          <PlayCircle className="w-12 h-12 text-white" />
+        </button>
+      )}
+    </div>
+  );
 }
