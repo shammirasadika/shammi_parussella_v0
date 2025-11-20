@@ -299,9 +299,24 @@ function HeroMedia() {
     };
   }, [videoTime]);
 
+  // Custom PiP button handler
+  const handlePiP = async () => {
+    if (!videoRef.current) return;
+    // Ensure video is visible before PiP
+    setShowVideo(true);
+    setIsPiP(false);
+    // Wait for video to be visible in DOM
+    setTimeout(async () => {
+      try {
+        await videoRef.current.requestPictureInPicture();
+      } catch (err) {
+        // Optionally handle error
+      }
+    }, 100);
+  };
+
   return (
     <div className="w-full h-full relative flex items-center justify-center">
-      {/* Always render the video element, toggle visibility with CSS */}
       <Image
         src="/profile.jpg"
         alt="Shammi Parussella"
@@ -314,14 +329,14 @@ function HeroMedia() {
         ref={videoRef}
         src="https://storage.googleapis.com/into_fullstack/Shammi%20Parussella_%20Full-Stack%20Innovator.mp4"
         className="absolute inset-0 w-full h-full object-cover rounded-full"
-          style={{
-            zIndex: 1,
-            background: 'transparent',
-            opacity: showVideo && !isPiP ? 1 : 0,
-            pointerEvents: showVideo && !isPiP ? 'auto' : 'none',
-            transition: 'opacity 0.3s'
-          }}
-          controls
+        style={{
+          zIndex: 1,
+          background: 'transparent',
+          opacity: showVideo && !isPiP ? 1 : 0,
+          pointerEvents: showVideo && !isPiP ? 'auto' : 'none',
+          transition: 'opacity 0.3s'
+        }}
+        controls
         autoPlay={showVideo && !isPiP}
         playsInline
         onEnded={handleVideoEnd}
@@ -338,6 +353,7 @@ function HeroMedia() {
           <PlayCircle className="w-12 h-12 text-white" />
         </button>
       )}
+      // ...existing code...
     </div>
   );
 }
