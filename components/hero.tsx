@@ -299,22 +299,6 @@ function HeroMedia() {
     };
   }, [videoTime]);
 
-  // Custom PiP button handler
-  const handlePiP = async () => {
-    if (!videoRef.current) return;
-    // Ensure video is visible before PiP
-    setShowVideo(true);
-    setIsPiP(false);
-    // Wait for video to be visible in DOM
-    setTimeout(async () => {
-      try {
-        await videoRef.current.requestPictureInPicture();
-      } catch (err) {
-        // Optionally handle error
-      }
-    }, 100);
-  };
-
   return (
     <div className="w-full h-full relative flex items-center justify-center">
       <Image
