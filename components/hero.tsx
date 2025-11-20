@@ -314,7 +314,13 @@ function HeroMedia() {
         ref={videoRef}
         src="https://storage.googleapis.com/into_fullstack/Shammi%20Parussella_%20Full-Stack%20Innovator.mp4"
         className="absolute inset-0 w-full h-full object-cover rounded-full"
-        style={{ zIndex: 1, background: 'transparent', display: showVideo && !isPiP ? 'block' : 'none', transition: 'display 0.3s' }}
+          style={{
+            zIndex: 1,
+            background: 'transparent',
+            opacity: showVideo && !isPiP ? 1 : 0,
+            pointerEvents: showVideo && !isPiP ? 'auto' : 'none',
+            transition: 'opacity 0.3s'
+          }}
         autoPlay={showVideo && !isPiP}
         playsInline
         onEnded={handleVideoEnd}
