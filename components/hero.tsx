@@ -323,8 +323,9 @@ function HeroMedia() {
       {(!showVideo || isPiP) && (
         <button
           aria-label="Play video"
-          onClick={handlePlay}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/60 rounded-full p-4 hover:bg-black/80 transition"
+          onClick={isPiP ? undefined : handlePlay}
+          disabled={isPiP}
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/60 rounded-full p-4 transition ${isPiP ? 'opacity-50 cursor-not-allowed' : 'hover:bg-black/80'}`}
           style={{ zIndex: 2 }}
         >
           <PlayCircle className="w-12 h-12 text-white" />
