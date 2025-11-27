@@ -6,122 +6,16 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const mouseRef = useRef({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    const particles: Array<{
-      x: number
-      y: number
-      vx: number
-      vy: number
-      size: number
-    }> = []
-
-    // Create particles
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-      })
-    }
-
-    const animate = () => {
-      ctx.fillStyle = "rgba(20, 20, 30, 0.1)"
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-      particles.forEach((particle, i) => {
-        // Move particle
-        particle.x += particle.vx
-        particle.y += particle.vy
-
-        // Mouse interaction
-        const dx = mouseRef.current.x - particle.x
-        const dy = mouseRef.current.y - particle.y
-        const distance = Math.sqrt(dx * dx + dy * dy)
-
-        if (distance < 150) {
-          const force = (150 - distance) / 150
-          particle.vx -= (dx / distance) * force * 0.2
-          particle.vy -= (dy / distance) * force * 0.2
-        }
-
-        // Boundary check
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1
-
-        // Draw particle
-        ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(139, 92, 246, ${0.5 + Math.random() * 0.5})`
-        ctx.fill()
-
-        // Draw connections
-        particles.slice(i + 1).forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x
-          const dy = particle.y - otherParticle.y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 100) {
-            ctx.beginPath()
-            ctx.moveTo(particle.x, particle.y)
-            ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(139, 92, 246, ${0.2 * (1 - distance / 100)})`
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        })
-      })
-
-      requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY }
-    }
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ background: "linear-gradient(to bottom, #14141e, #1a1a2e)" }}
-      />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: "linear-gradient(to bottom, #14141e, #1a1a2e)" }}>
 
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Profile Image */}
-            <div className="flex justify-center animate-fade-in">
+            <div className="flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-chart-3 rounded-full blur-2xl opacity-30 animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-chart-3 rounded-full blur-2xl opacity-30" />
                 <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl bg-white flex items-center justify-center">
                   {/* Interactive image/video frame */}
                   <HeroMedia />
@@ -129,7 +23,7 @@ export default function Hero() {
               </div>
             </div>
 
-          <div className="space-y-4 animate-fade-in">
+          <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold text-balance">
               <span className="text-yellow-400">Shammi Parussella</span>
             </h1>
@@ -192,9 +86,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
         <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+          <div className="w-1.5 h-1.5 bg-primary rounded-full" />
         </div>
       </div>
     </section>

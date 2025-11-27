@@ -292,7 +292,7 @@ export default function ProjectsShowcase() {
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Projects — All 8 Weeks
+              Projects
             </span>
           </h1>
           <p className="text-lg text-muted-foreground">
