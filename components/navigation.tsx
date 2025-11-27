@@ -9,7 +9,9 @@ const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "Work / Resume", href: "/work" },
   { name: "Projects", href: "#projects" },
+  { name: "AI & MCP", href: "/ai-mcp" },
   { name: "Skills", href: "#skills" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#get-in-touch" },
@@ -19,17 +21,12 @@ const portfolioPages = [
   { name: "🚀 Journey", href: "/journey" },
   { name: "🚀 Project Showcase", href: "/projects" },
   { name: "📦 Repositories", href: "/repositories" },
-  { name: "🔌 MCP Integration", href: "/mcp-demo" },
   { name: "🎮 Live Demos", href: "/demos" },
-  { name: "🎨 Design System", href: "/professional" },
 ]
 
 const week10Pages = [
   { name: "🎤 Presentation", href: "/presentation" },
   { name: "🎯 Career Plan", href: "/career-plan" },
-  { name: "🤝 Network", href: "/network" },
-  { name: "💻 Open Source", href: "/open-source" },
-  { name: "📚 Learning Plan", href: "/continued-learning" },
 ]
 
 export default function Navigation() {
@@ -44,18 +41,21 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 50)
 
       // Update active section based on scroll position
-      const sections = navItems.map((item) => {
-        const element = document.querySelector(item.href)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return {
-            id: item.href.replace("#", ""),
-            top: rect.top,
-            bottom: rect.bottom,
+      const sections = navItems
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => {
+          const element = document.querySelector(item.href)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return {
+              id: item.href.replace("#", ""),
+              top: rect.top,
+              bottom: rect.bottom,
+            }
           }
-        }
-        return null
-      }).filter(Boolean)
+          return null
+        })
+        .filter(Boolean)
 
       const currentSection = sections.find(
         (section) => section && section.top <= 100 && section.bottom > 100
@@ -117,21 +117,31 @@ export default function Navigation() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    activeSection === item.href.replace("#", "")
-                      ? "text-cyan-400 bg-cyan-500/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                  }`}
-                >
-                  {item.name}
-                </a>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.href);
+                    }}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      activeSection === item.href.replace("#", "")
+                        ? "text-cyan-400 bg-cyan-500/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-muted-foreground hover:text-foreground hover:bg-accent/50`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               
               {/* Portfolio Dropdown */}

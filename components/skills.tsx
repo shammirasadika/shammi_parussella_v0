@@ -17,7 +17,7 @@ const skillCategories = [
   {
     title: "Database & Cloud",
     color: "chart-3",
-    skills: ["MS SQL Server", "MySQL", "PostgreSQL", "MongoDB", "T-SQL", "Azure DB", "Neon DB", "Azure Functions", "Azure Logic Apps", "Microsoft Azure", "Google Cloud", "Vercel"],
+    skills: ["MS SQL Server", "MySQL", "PostgreSQL", "MongoDB", "T-SQL", "Azure DB", "Neon DB", "Azure Functions", "Azure Logic Apps", "Microsoft Azure", "Google Cloud", "Azure Active Directory", "Vercel"],
   },
   {
     title: "Tools & Practices",
@@ -32,7 +32,7 @@ const skillCategories = [
   {
     title: "Other Technologies",
     color: "chart-2",
-    skills: ["Windows Service", "Azure Storage", "Azure Event Grid", "List & Label"],
+    skills: ["Windows Service", "Azure Storage", "Azure Event Grid", "List & Label", "Google Cloud Identity"],
   },
   {
     title: "Soft Skills",

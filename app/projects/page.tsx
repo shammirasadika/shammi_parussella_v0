@@ -25,7 +25,7 @@ const caseStudies = [
       description: "RAG Architecture with Vector Search and LLM Integration",
       components: [
         "User Query → Query Processor → Intent Detection",
-        "Vector Embeddings → ChromaDB Search → Relevant Chunks",
+        "Vector Embeddings → Upstash Vector DB Search → Relevant Chunks",
         "Context Assembly → Ollama LLM → Response Generation",
         "Conversation Memory → Context Management → Citation System",
       ],
@@ -296,7 +296,7 @@ export default function ProjectsShowcase() {
             </span>
           </h1>
           <p className="text-lg text-muted-foreground">
-            Complete case studies from the AI Agent Developer Workshop showcasing technical skills and problem-solving
+            Explore technical case studies demonstrating advanced problem-solving and engineering skills across AI, full-stack, and cloud projects.
           </p>
         </div>
       </section>
@@ -315,11 +315,7 @@ export default function ProjectsShowcase() {
                 <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
                   <div className="text-8xl opacity-20 absolute">{project.thumbnail}</div>
                   <div className="text-6xl z-10 group-hover:scale-110 transition-transform">{project.thumbnail}</div>
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="outline" className="bg-black/50 backdrop-blur text-white border-white/30">
-                      Week {project.week}
-                    </Badge>
-                  </div>
+                  {/* Removed week badge for recruiter-friendly view */}
                 </div>
                 
                 <CardHeader>
@@ -377,7 +373,7 @@ export default function ProjectsShowcase() {
               <div className="text-9xl opacity-10 absolute inset-0 flex items-center justify-center">{selectedCase.thumbnail}</div>
               <div className="relative z-10">
                 <Badge variant="outline" className="bg-black/50 backdrop-blur text-white border-white/30 mb-4">
-                  Week {selectedCase.week} • {selectedCase.category}
+                  {selectedCase.category}
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">{selectedCase.title}</h1>
                 <p className="text-xl text-white/90 mb-6">{selectedCase.subtitle}</p>
